@@ -1,0 +1,39 @@
+.categories {
+    border-radius: 20%;
+    border: 1px outset grey;
+    column-gap: 20px;
+    display: flex;
+    padding: 20px;
+    .category {
+        background-color: #333;
+        border-radius: 100%;
+        font-size: 1rem;
+        text-align: center;
+        width: 80px;
+        height: 80px;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 25%;
+        a {           
+            color:#999;
+            text-decoration: none;
+            &:hover {
+                color: #fff;
+            }
+            span {
+               
+            }
+        }
+    }
+}
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    
+    .menu-item {
+        flex-basis: 33.333333%;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}

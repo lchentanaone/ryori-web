@@ -1,0 +1,31 @@
+.header {
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+.body {
+    justify-content: center;
+}
+.block {
+    justify-content: center;
+    display: flex;
+}
+ul, li {
+    padding: 0;
+    display: flex;
+    margin:0;
+}
+li {
+    display: flex;
+    flex: 1;
+}
+
+body {
+    margin:20px;
+    background-color: #000;
+    color: orange;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.footerButtons {
+    align-items: flex-end;
+}
