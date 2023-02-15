@@ -36,3 +36,13 @@ body {
 .ver {
     flex-direction: column;
 }
+.center {
+    justify-content: center;
+    text-align: center;
+}
+.middle {
+    align-items: center;
+}
+.space {
+    row-gap: 20px;
+}

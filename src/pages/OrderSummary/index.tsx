@@ -104,7 +104,7 @@ export default () => {
       </div>
       <div className="block">
         <Link to="/"><Button variant="outlined">Add More</Button></Link>
-        <Link to="/"><Button variant="contained">Submit</Button></Link>
+        <Link to="/thank-you"><Button variant="contained">Submit</Button></Link>
       </div>
     </>
   );
