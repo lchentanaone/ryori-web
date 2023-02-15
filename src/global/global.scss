@@ -27,5 +27,12 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .footerButtons {
-    align-items: flex-end;
+    justify-content: flex-end;
+    display: flex;
+}
+.hor {
+    flex-direction: row;
+}
+.ver {
+    flex-direction: column;
 }

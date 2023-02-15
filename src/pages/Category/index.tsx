@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import './category.scss'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
-import { Box, Fab, Icon } from '@mui/material';
-
+import FooterButtons from '../../components/FooterButtons.tsx';
+import QuantitySetter from '../../components/QuantitySetter/QuantitySetter.tsx';
 
 const placeholderURL = "https://via.placeholder.com/"
 const data = {
@@ -66,7 +66,10 @@ const data = {
 
 const MenuItems = ({menuItems, cart, updateCart}) => {
     const tempCart = [...cart]
-    const setQuantity = (type, menuItemId) => {
+    // TODO : To be refactored
+    const emitQuantitySetter = (type, menuItemId) => {
+
+        const tempCart = [...cart]
         const cartIndex = tempCart.findIndex(cartItem => cartItem.id === menuItemId)
         if(cartIndex >= 0) {
             
@@ -77,14 +80,19 @@ const MenuItems = ({menuItems, cart, updateCart}) => {
                     tempCart[cartIndex].qty === 0 ? 0 :
                     tempCart[cartIndex].qty - 1
             }
+
+            debugger;
         }
         else {
+
             // New
             tempCart.push({
                 id : menuItemId,
                 qty : 1
             })
+            debugger;
         }
+
         updateCart(tempCart)
     }
     return (
@@ -105,21 +113,9 @@ const MenuItems = ({menuItems, cart, updateCart}) => {
                             <span className="price">₱{menuItem.price}</span>
                             <Link to="/food-details">See more &#8811;</Link>
 
-                            <span className="qty">{cartItem?.qty || 0}</span>
-                            <div className="controls">
-                                <ButtonGroup
-                                    disableElevation
-                                    variant="contained"
-                                    aria-label="Disabled elevation buttons"
-                                >
-                                    <Button onClick={() => {
-                                        setQuantity('-', menuItem.id)
-                                    }}>-</Button>
-                                    <Button onClick={() => {
-                                        setQuantity('+', menuItem.id)
-                                    }}>+</Button>
-                                </ButtonGroup>
-                            </div>
+                            
+                            {/* TODO : Must be refactored into a separate component */}
+                            <QuantitySetter qty={cartItem?.qty || 0} itemId={menuItem?.id} handleEmit={emitQuantitySetter} />
                         {/* </Link> */}
                         </li>
                     )
@@ -131,18 +127,6 @@ const MenuItems = ({menuItems, cart, updateCart}) => {
     )
 }
 
-const FooterButtons = () => {
-    return (
-        <div className="footerButtons">
-            <Box sx={{ '& > :not(style)': { m: 1 } }}>
-                <Fab color="secondary" aria-label="add">
-                    +
-                </Fab>
-            </Box>
-        </div>
-    )
-}
-
 export default () => {
     const [cart, setCart] = useState([
         {
@@ -151,7 +135,9 @@ export default () => {
         }
       ])
     const updateCart = (updatedCart) => {
+
         setCart(updatedCart)
+
     }
   return (
     <>
