@@ -1,25 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './order-summary.scss'
 import { Button, ButtonGroup, FormControl, Input, InputAdornment, InputLabel } from '@mui/material';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import QuantitySetter from '../../components/QuantitySetter/QuantitySetter.tsx';
+import { Context } from '../../global/context.ts';
 
 const placeholderURL = "https://via.placeholder.com/"
 const data = {
-    orders : [{
-        id : '001',
-        image : placeholderURL + '150',
-        label : "Beef Balbacua",
-        price : 89,
-        qty : 1
-    }, {
-        id : '002',
-        image : placeholderURL + '150',
-        label : "Leche Flan with strawberry topping",
-        price : 89,
-        qty : 1
-    }],
     total : 0
 }
 
@@ -43,6 +31,8 @@ const SearchField = () => {
 }
 
 export default () => {
+    const {cart, setCart} = useContext(Context);
+    
     // TODO : Must be refactored to a separate component's function. This has consecutive DOM below which must be carried along when that is refactored.
     // get from QuantitySetter
     const emitQuantitySetter = (type, menuItemId) => {
@@ -81,7 +71,7 @@ export default () => {
       <div className="block">
         <ul className="orders">
             {
-            data.orders && data.orders.map(order => (
+            cart && cart.map(order => (
                 <li className="order-item hor">
                     <img src={order.image} alt={order.label} />
                     <div className="ver">

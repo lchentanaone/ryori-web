@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import './thankyou.scss';
+import { Context } from '../../global/context.ts';
 
 const placeholderURL = "https://via.placeholder.com/"
 const data = {
 }
 
 export default () => {
-    
+    const contextData = useContext(Context);
+    console.log({contextData})
   return (
     <>
       <div className="header block">

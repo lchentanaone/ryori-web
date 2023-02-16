@@ -1,70 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import './category.scss'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import FooterButtons from '../../components/FooterButtons.tsx';
 import QuantitySetter from '../../components/QuantitySetter/QuantitySetter.tsx';
+import categories from './../../mockData/category.ts';
+import menuItems from '../../mockData/menuItems.ts';
+import { placeholderURL } from '../../mockData/global.ts';
+import { Context } from '../../global/context.ts';
 
-const placeholderURL = "https://via.placeholder.com/"
-const data = {
-  categories : [{
-    label : "Pasta",
-    image : placeholderURL + "150"
-  }, {
-    label : "Drinks",
-    image :placeholderURL + "150"
-  }, {
-    label : "Short Orders",
-    image : placeholderURL + "150"
-  }, {
-    label : "Chicken",
-    image : placeholderURL + "150"
-  }, {
-    label : "Pasta",
-    image : placeholderURL + "150"
-  }, {
-    label : "Drinks",
-    image :placeholderURL + "150"
-  }, {
-    label : "Short Orders",
-    image : placeholderURL + "150"
-  }, {
-    label : "Chicken",
-    image : placeholderURL + "150"
-  }],
-  menuItems : [{
-    id: '001',
-    label : "Falafel with salad",
-    calorieCount: 180,
-    price : 189.99,
-    discount : 0.15,
-    image : placeholderURL + "150"
-  }, {
-    id: '002',
-    label : "Falafel with salad",
-    calorieCount: 180,
-    price : 189.99,
-    discount : 0.15,
-    image : placeholderURL + "150"
-  }, {
-    id: '003',
-    label : "Falafel with salad",
-    calorieCount: 180,
-    price : 189.99,
-    discount : 0.15,
-    image : placeholderURL + "150"
-  }, {
-    id: '004',
-    label : "Falafel with salad",
-    calorieCount: 180,
-    price : 189.99,
-    discount : 0.15,
-    image : placeholderURL + "150"
-  }]
-}
-
-const MenuItems = ({menuItems, cart, updateCart}) => {
+const MenuItems = ({menuItems}) => {
+    const {cart, setCart} = useContext(Context);
     const tempCart = [...cart]
     // TODO : To be refactored
     const emitQuantitySetter = (type, menuItemId) => {
@@ -93,15 +40,16 @@ const MenuItems = ({menuItems, cart, updateCart}) => {
             debugger;
         }
 
-        updateCart(tempCart)
+        setCart(tempCart)
     }
+    
     return (
         <>
         <div className="menu block">
             <ul className="menu-items">
             {
                 menuItems && menuItems.map(menuItem => {
-                    const cartItem = tempCart.find(cartItem => cartItem.id === menuItem.id)
+                    const cartItem = cart.find(cartItem => cartItem.id === menuItem.id)
                     console.log({cartItem})
                     return (
                         <li className="menu-item">
@@ -115,6 +63,7 @@ const MenuItems = ({menuItems, cart, updateCart}) => {
 
                             
                             {/* TODO : Must be refactored into a separate component */}
+                            
                             <QuantitySetter qty={cartItem?.qty || 0} itemId={menuItem?.id} handleEmit={emitQuantitySetter} />
                         {/* </Link> */}
                         </li>
@@ -128,17 +77,6 @@ const MenuItems = ({menuItems, cart, updateCart}) => {
 }
 
 export default () => {
-    const [cart, setCart] = useState([
-        {
-          "id": "001",
-          "qty": 1
-        }
-      ])
-    const updateCart = (updatedCart) => {
-
-        setCart(updatedCart)
-
-    }
   return (
     <>
       <div className="header block">
@@ -149,7 +87,7 @@ export default () => {
       <div className="block">
         <ul className="categories">
             {
-            data.categories && data.categories.map(category => (
+            categories && categories.map(category => (
               <li className="category">
                 <Link to="/category">
                     <span>{category.label}</span>
@@ -159,7 +97,7 @@ export default () => {
           }
         </ul>
       </div>
-      <MenuItems menuItems={data.menuItems} cart={cart} updateCart={updateCart}/>
+      <MenuItems menuItems={menuItems}/>
       <FooterButtons />
     </>
   );

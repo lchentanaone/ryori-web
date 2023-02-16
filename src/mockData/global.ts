@@ -1,0 +1,1 @@
+export const placeholderURL = "https://via.placeholder.com/"

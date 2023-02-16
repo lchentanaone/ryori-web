@@ -1,35 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './menu.scss'
-
-const placeholderURL = "https://via.placeholder.com/"
-const data = {
-  categories : [{
-    label : "Pasta",
-    image : placeholderURL + "150"
-  }, {
-    label : "Drinks",
-    image :placeholderURL + "150"
-  }, {
-    label : "Short Orders",
-    image : placeholderURL + "150"
-  }, {
-    label : "Chicken",
-    image : placeholderURL + "150"
-  }, {
-    label : "Pasta",
-    image : placeholderURL + "150"
-  }, {
-    label : "Drinks",
-    image :placeholderURL + "150"
-  }, {
-    label : "Short Orders",
-    image : placeholderURL + "150"
-  }, {
-    label : "Chicken",
-    image : placeholderURL + "150"
-  }]
-}
+import categories from './../../mockData/category.ts';
+import { placeholderURL } from '../../mockData/global.ts';
 
 export default () => {
   return (
@@ -50,7 +23,7 @@ export default () => {
       <div className="menu block">
         <ul className="menu-list">
           {
-            data.categories && data.categories.map(category => (
+            categories && categories.map(category => (
               <li className="menu-item">
                 <Link to="/category">
                   <img src={category.image} alt={category.image} />
