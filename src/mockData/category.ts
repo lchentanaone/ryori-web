@@ -1,28 +1,25 @@
-import { placeholderURL } from "./global.ts";
-
-
 export default [{
   label : "Pasta",
-  image : placeholderURL + "150"
+  image : process.env.REACT_APP_URL + '/mockAssets/images/food-1.png'
 }, {
   label : "Drinks",
-  image :placeholderURL + "150"
+  image : process.env.REACT_APP_URL + '/mockAssets/images/food-1.png'
 }, {
   label : "Short Orders",
-  image : placeholderURL + "150"
+  image : process.env.REACT_APP_URL + '/mockAssets/images/food-1.png'
 }, {
   label : "Chicken",
-  image : placeholderURL + "150"
+  image : process.env.REACT_APP_URL + '/mockAssets/images/food-1.png'
 }, {
   label : "Pasta",
-  image : placeholderURL + "150"
+  image : process.env.REACT_APP_URL + '/mockAssets/images/food-1.png'
 }, {
   label : "Drinks",
-  image :placeholderURL + "150"
+  image : process.env.REACT_APP_URL + '/mockAssets/images/food-1.png'
 }, {
   label : "Short Orders",
-  image : placeholderURL + "150"
+  image : process.env.REACT_APP_URL + '/mockAssets/images/food-1.png'
 }, {
   label : "Chicken",
-  image : placeholderURL + "150"
+  image : process.env.REACT_APP_URL + '/mockAssets/images/food-1.png'
 }]

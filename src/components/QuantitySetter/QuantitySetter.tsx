@@ -9,6 +9,7 @@ const QuantitySetter = ({qty, itemId, handleEmit}) => {
         <div className="quantity-setter block">
             <span className="qty">{qty}</span>
             <ButtonGroup
+                className="button-group"
                 disableElevation
                 variant="contained"
                 aria-label="Quantity Control"

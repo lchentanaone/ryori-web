@@ -57,9 +57,11 @@ const MenuItems = ({menuItems}) => {
                             <img src={menuItem.image} alt={menuItem.image} />
                             <h6>{menuItem.label}</h6>
                             <span className="calorie-count">{menuItem.calorieCount} cal</span>
-                            <span className="discount">{menuItem.discount}% off</span>
+                            <span className="discount">{menuItem.discount}% 
+                              <sub>off</sub>
+                            </span>
                             <span className="price">₱{menuItem.price}</span>
-                            <Link to="/food-details">See more &#8811;</Link>
+                            <Link to="/food-details" className="see-more">&#9432;</Link>
 
                             
                             {/* TODO : Must be refactored into a separate component */}
