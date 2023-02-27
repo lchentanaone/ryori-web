@@ -1,0 +1,25 @@
+.details {
+    flex-direction: column;
+    img {
+        width: 450px;
+        margin: auto;
+    }
+    .contents {
+        font-size: 1rem;
+        border-top: 1px solid;
+        padding-top: 40px;
+    }
+    .tags {
+        display: block;
+        li {
+            background-color: #7be599;
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 0 10px;
+            color: #000;
+            border-radius: 30px;
+            font-size: medium;
+            border: 1px green outset;
+        }
+    }
+}

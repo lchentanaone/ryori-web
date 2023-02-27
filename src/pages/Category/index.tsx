@@ -9,6 +9,7 @@ import categories from './../../mockData/category.ts';
 import menuItems from '../../mockData/menuItems.ts';
 import { placeholderURL } from '../../mockData/global.ts';
 import { Context } from '../../global/context.ts';
+import RyoHeader from '../../components/RyoHeader/RyoHeader.tsx';
 
 const MenuItems = ({menuItems}) => {
     const {cart, setCart} = useContext(Context);
@@ -81,15 +82,12 @@ const MenuItems = ({menuItems}) => {
 export default () => {
   return (
     <>
-      <div className="header block">
-        <img src={placeholderURL + '50'} alt="Company Name" />
-        <span>Company Name</span>
-      </div>
-      <h2>Choose Your Order</h2>
-      <div className="block">
+      <RyoHeader />
+      <div className="block categories-container">
+        <h2>Choose Your Order</h2>
         <ul className="categories">
             {
-            categories && categories.map(category => (
+            categories && categories.map((category) => (
               <li className="category">
                 <Link to="/category">
                     <span>{category.label}</span>

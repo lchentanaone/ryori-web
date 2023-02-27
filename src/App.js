@@ -6,6 +6,7 @@ const Menu = lazy(() => import('./pages/Menu/index.tsx'))
 const Category = lazy(() => import('./pages/Category/index.tsx'))
 const OrderSummary = lazy(() => import('./pages/OrderSummary/index.tsx'))
 const ThankYou = lazy(() => import('./pages/ThankYou/index.tsx'))
+const FoodDetails = lazy(() => import('./pages/FoodDetails/index.tsx'))
 
 
 
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/category" element={<Category />} />
             <Route path="/summary" element={<OrderSummary />} />
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/food-details" element={<FoodDetails />} />
           </Routes>
         </Suspense>
       </Router>

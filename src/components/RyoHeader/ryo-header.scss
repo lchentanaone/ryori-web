@@ -1,0 +1,11 @@
+.btn-back {
+    background: url('../../../public/assets/back-icon.png');
+    width: 80px;
+    height: 80px;
+    left: 50px;
+    position: absolute;
+    background-size: contain;
+    &:active {
+        opacity: 0.5;
+    }
+}
