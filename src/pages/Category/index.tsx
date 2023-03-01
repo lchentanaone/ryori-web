@@ -28,17 +28,20 @@ const MenuItems = ({menuItems}) => {
                     tempCart[cartIndex].qty === 0 ? 0 :
                     tempCart[cartIndex].qty - 1
             }
-
-            debugger;
         }
         else {
 
             // New
+
+            // Get data of menuItemId 
+            const menuItemData = menuItems.find(item => item.id === menuItemId)
             tempCart.push({
                 id : menuItemId,
-                qty : 1
+                qty : 1,
+                image: menuItemData.image,
+                label: menuItemData.label,
+                price: menuItemData.price
             })
-            debugger;
         }
 
         setCart(tempCart)

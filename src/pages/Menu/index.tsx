@@ -10,7 +10,7 @@ export default () => {
   return (
     <>
       <RyoHeader />
-      <div className="features block full" style={{backgroundImage: "url(" + restoData.bg + ")"}}>
+      <div className="features block full with-bg-image" style={{backgroundImage: "url(" + restoData.bg + ")"}}>
         <img src={categories[0].image} alt="Salad with feta Cheese" />
         <div className="feature-meta">
           <h2>Our Specials</h2>

@@ -29,8 +29,6 @@ export default () => {
                     tempCart[cartIndex].qty === 0 ? 0 :
                     tempCart[cartIndex].qty - 1
             }
-
-            debugger;
         }
         else {
 
@@ -39,7 +37,6 @@ export default () => {
                 id : menuItemId,
                 qty : 1
             })
-            debugger;
         }
 
         setCart(tempCart)

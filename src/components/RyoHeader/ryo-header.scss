@@ -1,11 +1,37 @@
-.btn-back {
-    background: url('../../../public/assets/back-icon.png');
-    width: 80px;
-    height: 80px;
-    left: 50px;
-    position: absolute;
-    background-size: contain;
-    &:active {
-        opacity: 0.5;
+.header {
+    .btn-back {
+        background: url('../../../public/assets/back-icon.png');
+        width: 80px;
+        height: 80px;
+        left: 50px;
+        position: absolute;
+        background-size: contain;
+        &:active {
+            opacity: 0.5;
+        }
+    }
+    &.secondary {
+        .btn-back {
+            width:50px;
+            height:50px;
+        }
+    }
+}
+
+.search {
+    border-radius: 25px;
+    background-color: #fff;
+    width: 50%;
+    & > div {
+        display: block;
+        text-align: center;
+    }
+    input {
+        width: 100%;
+        
+    }
+    & > div > div {
+        width: 90%;
+        padding: 5px;
     }
 }

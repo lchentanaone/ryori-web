@@ -11,5 +11,23 @@
         padding: 20px;
         column-gap: 20px;
         align-items: center;
+        background-color: #222;
+        img {
+            width:200px;
+        }
+        &:nth-child(2n+2) {
+            background-color: transparent;
+        }
+        .meta-data {
+            h3 {
+                flex:1;
+            }
+        }
     }
+    
+}
+.total {
+    h4 {
+        flex: 1;
+    }       
 }

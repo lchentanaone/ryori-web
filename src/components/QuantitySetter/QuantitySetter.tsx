@@ -6,7 +6,7 @@ import './quantity-setter.scss';
 const QuantitySetter = ({qty, itemId, handleEmit}) => {
     
     return (
-        <div className="quantity-setter block">
+        <div className="quantity-setter">
             <span className="qty">{qty}</span>
             <ButtonGroup
                 className="button-group"

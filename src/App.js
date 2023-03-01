@@ -13,13 +13,7 @@ const FoodDetails = lazy(() => import('./pages/FoodDetails/index.tsx'))
 
 const App = () => {
   // Default for globals state happense here...
-  const [cart, setCart] = useState([{
-    "id": "001",
-    "qty": 2,
-    "image" : placeholderURL + '150',
-    "label" : "Beef Balbacua",
-    "price" : 89,
-  }])
+  const [cart, setCart] = useState([])
   return (
     <Context.Provider value={{cart, setCart}}>
 
